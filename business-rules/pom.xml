@@ -12,7 +12,7 @@
 	<properties>
 		<business.rules.version>1.0</business.rules.version>
 	</properties>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -30,18 +30,15 @@
 							<debug>true</debug>
 							<debugExtra>true</debugExtra>
 							<recursive>true</recursive>
-							
+
 							<path>${basedir}/src/main/resources/rules</path>
-							<!--
-							<baseDir>${basedir}</baseDir>
-							<packageStart>rules1</packageStart>
-							-->
+							<!-- <baseDir>${basedir}</baseDir> <packageStart>rules1</packageStart> -->
 							<packageExclude>[0-9|.]*[.|-]+[SNAPSHOT]+[.|-]*[09|.]*</packageExclude>
 							<fileExtensions>drl,xls,bpmn</fileExtensions>
 							<creator>admin</creator>
 							<outputFile>${project.build.directory}/guvnor-import.xml</outputFile>
 							<snapshotName>1.0.0</snapshotName>
-							
+
 							<models>
 								<artifact>
 									<groupId>org.jboss.super</groupId>
@@ -49,44 +46,14 @@
 									<version>${project.version}</version>
 								</artifact>
 							</models>
-							<!-- 
-							<functionFileName>functions.txt</functionFileName>
-							<kagentChangeSetServer>http://localhost:8080/org.drools.guvnor.Guvnor/package/</kagentChangeSetServer>
-							 -->
+							<!-- <functionFileName>functions.txt</functionFileName> <kagentChangeSetServer>http://localhost:8080/org.drools.guvnor.Guvnor/package/</kagentChangeSetServer> -->
 							<kagentChangeSetFile>${project.build.directory}/kagent-changeset.xml</kagentChangeSetFile>
-							
+
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
-			<!-- 
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>download-domain-model-jar</id>
-						<phase>process-resources</phase>
-						<goals>
-							<goal>copy</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${project.build.directory}</outputDirectory>
-							<artifactItems>
-								<artifactItem>
-									<groupId>org.jboss.super</groupId>
-									<artifactId>rule-domain</artifactId>
-									<version>${project.version}</version>
-								</artifactItem>
-							</artifactItems>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			 -->
-            <!-- 
-             -->
-            <plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
 				<executions>
@@ -167,7 +134,7 @@
 			<artifactId>ecj</artifactId>
 			<version>${brms.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>net.sourceforge.jexcelapi</groupId>
 			<artifactId>jxl</artifactId>
@@ -178,15 +145,6 @@
 			<artifactId>rule-domain</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		<!-- 
-		<dependency>
-			<groupId>org.drools</groupId>
-			<artifactId>brms-bulk-importer</artifactId>
-			<version>5.3.1.GA</version> ## the official version has faults, therefore using custom community build from https://github.com/matallen/maven-guvnor-bulk-importer  ##
-			<version>5.4.0.MALLEN</version>
-		</dependency>
-		 -->
-		
 		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
@@ -195,53 +153,5 @@
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 		</dependency>
-		
-		<!-- 
-		<dependency>
-			<groupId>jboss-enterprise.brms-engine</groupId>
-			<artifactId>knowledge-api</artifactId>
-			<version>${brms.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>jboss-enterprise.brms-engine</groupId>
-			<artifactId>drools-core</artifactId>
-			<version>${brms.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>jboss-enterprise.brms-engine</groupId>
-			<artifactId>drools-compiler</artifactId>
-			<version>${brms.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>jboss-enterprise.brms-engine</groupId>
-			<artifactId>drools-decisiontables</artifactId>
-			<version>${brms.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>jboss-enterprise.brms-engine</groupId>
-			<artifactId>drools-templates</artifactId>
-			<version>${brms.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>jboss-enterprise.brms-engine</groupId>
-			<artifactId>jxl</artifactId>
-			<version>${brms.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>jboss-enterprise.brms-engine</groupId>
-			<artifactId>mvel2</artifactId>
-			<version>${brms.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>jboss-enterprise.brms-engine</groupId>
-			<artifactId>antlr-runtime</artifactId>
-			<version>${brms.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>jboss-enterprise.brms-engine</groupId>
-			<artifactId>ecj</artifactId>
-			<version>${brms.version}</version>
-		</dependency>
-		 -->
 	</dependencies>
 </project>
