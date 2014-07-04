@@ -12,11 +12,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<guava.version>13.0.1</guava.version>
-		<junit.version>4.11</junit.version>
-		<brms.version>5.3.1.GA</brms.version>
-		<joda.version>2.1</joda.version>
-		<guava.version>13.0.1</guava.version>
+		<brms.version>5.3.1.BRMS</brms.version>
 	</properties>
 
 	<modules>
@@ -28,19 +24,21 @@
 	<repositories>
 		<repository>
 			<id>jboss-nexus</id>
-			<url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+			<url>https://repository.jboss.org/nexus/content/groups/public-jboss</url>
 		</repository>
 	</repositories>
 
 	<pluginRepositories>
+	<!-- 
 		<pluginRepository>
 			<id>central-plugins</id>
 			<name>Plugins Repository</name>
 			<url>http://repo1.maven.org/maven2</url>
 		</pluginRepository>
+	 -->
 		<pluginRepository>
 			<id>jboss-nexus</id>
-			<url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+			<url>https://repository.jboss.org/nexus/content/groups/public-jboss</url>
 		</pluginRepository>
 	</pluginRepositories>
 
@@ -65,12 +63,12 @@
 			<dependency>
 				<groupId>com.google.guava</groupId>
 				<artifactId>guava</artifactId>
-				<version>${guava.version}</version>
+				<version>13.0.1</version>
 			</dependency>
 			<dependency>
 				<groupId>joda-time</groupId>
 				<artifactId>joda-time</artifactId>
-				<version>${joda.version}</version>
+				<version>2.1</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -80,7 +78,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
+			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
